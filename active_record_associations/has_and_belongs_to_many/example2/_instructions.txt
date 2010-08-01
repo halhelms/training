@@ -1,0 +1,1 @@
+Model a Person class such that one Person can have many friends. (If Tom adds Hatem as his friend, it does not necessarily follow that Tom is Hatem's friend.)

@@ -1,0 +1,29 @@
+create_table
+change_table
+drop_table
+add_column
+change_column
+rename_column
+remove_column
+add_index
+remove_index
+
+rake db:migrate
+rake db:rollback
+
+change_table :animals do |t|
+	t.remove :pet_name, :pet_type
+	t.index :some_column
+	t.rename :anmial_type, :animal_type
+	t.timestamps
+end
+
+rake db:migration VERSION=20100728120000
+
+rake db:rollback STEP=3 runs the down method from the last 3 migrations
+
+rake db:migrate:redo is a shortcut for
+	rake db:rollback
+	rake db:migrate
+	
+rake db:reset drops db and recreates it

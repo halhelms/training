@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date_paid: 2010-07-22
+  amount: 9.99
+  type: MyString
+
+two:
+  date_paid: 2010-07-22
+  amount: 9.99
+  type: MyString

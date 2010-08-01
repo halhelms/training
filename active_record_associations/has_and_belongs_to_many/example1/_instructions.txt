@@ -1,0 +1,1 @@
+Model two classes, Part and Assembly, such that a part can belong to many assemblies and an assembly can have many parts.

@@ -1,0 +1,7 @@
+1. Model the following: a person that has a single address. Using has_one and belongs_to, create a bi-directional relationship between them, such that from address, one can find the person; and from the person, one can find their address
+
+2. (illustrating polymorphic associations)
+Model the following: the Cyan political party and the Orange political party are enemies, having nothing to do with one another (they even have separate models). Each has a single convention. Using polymorphic associations, model the relationships such that from a convention, one can get to the appropriate party; and from the political party, one can get to the convention.
+
+3. (illustrating self-associations)
+Model the following: two people become married and are therefore spouses of each other.

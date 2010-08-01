@@ -1,0 +1,2 @@
+1. Create a model for newsletters and one for subscribers.
+2. Newsletters should know their subscribers -- but only those who have been confirmed

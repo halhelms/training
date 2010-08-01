@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Purchase:</b>
+  <%= @ad.purchase %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @ad.cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<%= link_to 'Back', ads_path %>

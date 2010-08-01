@@ -1,0 +1,24 @@
+Helpful References:
+http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html
+
+Create a form that is NOT linked to a model with the following fields:
+
+first_name: text
+
+last_name: text
+
+email :text
+
+field set with the legend "Ice cream" for the following
+
+favorite_icecream_flavor: select box with varieties of "chocolate", "butter pecan", "rocky road", "pistachio", "chunky fudge"
+
+preference: radio button with cone or cup
+
+likes: checkboxes with "sherbet", "sugar-free", "premium", "artisanal"
+
+
+Don't forget to use labels -- the Rails way!
+
+
+

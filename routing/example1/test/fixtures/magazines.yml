@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  issue_no: 1
+  year: 1
+
+two:
+  name: MyString
+  issue_no: 1
+  year: 1

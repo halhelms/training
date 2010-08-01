@@ -1,0 +1,32 @@
+<%= content_for :title do %>
+	<title>New Profile</title>
+<% end %>
+
+<%= form_tag('http://localhost:3000/profile/create', :method => 'post') do %>
+	<%= field_set_tag 'Profile' do %>
+		<%= label_tag 'first_name', 'First Name:' %>
+		<%= text_field_tag 'first_name' %>
+		<br />
+		<%= label_tag 'last_name', 'Last Name:' %>
+		<%= text_field_tag 'last_name' %>
+		<br />
+		<%= label_tag 'email', 'Email:' %>
+		<%= text_field_tag 'email' %>
+		<br />
+		<%= field_set_tag 'Ice Cream' do %>
+			<%= label_tag 'favorite_icecream_flavor', 'Favorite Flavor:' %>
+			<%= select_tag ('favorite_icecream_flavor', options_for_select([['Chocolate', 'chocolate'], ['Pistachio', 'pistachio'], ['Butter Pecan', 'butter pecan'], ['Vanilla Bean', 'vanilla bean'], ['Rocky Road', 'rocky road']]))  %>
+			<br />
+			<%= label_tag 'preference', 'Preference:' %>
+			<%= radio_button_tag 'preference', 'cone' %> Cone<br />
+			<%= radio_button_tag 'preference', 'cup' %> Cup<br />
+			<br />
+			<%= label_tag 'likes', 'Likes' %>
+			<%= check_box_tag 'likes', 'sherbet' %> Sherbet<br />
+			<%= check_box_tag 'likes', 'sugar-free' %> Sugar-Free<br />
+			<%= check_box_tag 'likes', 'premium' %> Premium<br />
+			<%= check_box_tag 'likes', 'artisanal' %> Artisan
+		<% end %>
+	<% end %>
+	<%= submit_tag "OK" %>
+<% end %>

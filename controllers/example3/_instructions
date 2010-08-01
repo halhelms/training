@@ -1,0 +1,6 @@
+This illustrates how to use instance variables and params in the controller on the view pages.
+
+1. request parameters
+2. simple instance variable
+3. array instance variable
+4. hash instance variable

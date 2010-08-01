@@ -1,0 +1,55 @@
+Rails router recognizes URLs and dispatches them to a specified controller/action. It also generates paths and URLs for use in the view.
+
+resources :photos
+makes accessible the 7 RESTful routes plus
+photos_path >>> /photos
+new_photo_path >>> /photos/new
+edit_photo_path >>> /photos/edit
+photo_path(id) >>> /photos/:id
+
+each path helper has a corresponding URL helper.
+
+resources :photos, :books
+
+Or map a singular resource such as
+match "profile" => "users#show"
+
+resource :geocoder
+creates everything but index (no need since it's not a plural route)
+
+new_geocoder_path >>> /geocoder/new
+edit_geocoder_path >>> /geocoder/edit
+geocoder_path >>> /geocoder
+
+also provides URL helpers
+
+
+
+namespace "admin" do
+	resources :posts, :comments
+end
+
+will route to /app/controllers/admin -- and then the seven verbs
+
+Nested resources
+Given...
+
+class Magazine < ActiveRecord::Base
+	has_many :ads
+end
+
+class Ad < ActiveRecord::Base
+	belongs_to :magazine
+end
+
+with
+
+resources :magazines do
+	resources :ads
+end
+
+... then Rails provides routes for the following URLs:
+GET  /magazines/1/ads 					index
+GET  /magazines/1/ads/new				new
+POST /magazines/1/ads						create
+GET  /magazines/ads/

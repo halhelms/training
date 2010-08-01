@@ -1,0 +1,48 @@
+In active_record_associations/example1, we have an ice cream factory that has many ice creams.
+
+1. Populate the following ice creams:
+  flavor: Pistachio Nut
+  flavor: Vanilla Bean
+  flavor: Chocolate
+  flavor: Praline
+
+2. Let's find the object with an id of 3. What flavor is it?
+Icecream.find(3).flavor
+
+3. Let's find the object with a flavor of "Chocolate". List 5 ways of doing this.
+Icecream.find_by_flavor("Chocolate")
+Icecream.where(:flavor => "Chocolate")
+Icecream.where("flavor = 'Chocolate'")
+Icecream.where(["flavor = ?", "Chocolate"])
+Icecream.where({:flavor => "Chocolate"})
+
+4. Retrieving multiple objects. 
+  Get the ice creams with ids of 2 and 3
+  Icecream.find(2,3) OR Icecream.find([2, 3])
+  *Icecream.find_each(2,3)
+  *Icecream.find_in_batches(2,3)
+  What's the difference between the two starred examples? Where would one be used over the other?
+
+5. Conditions
+  a.Get the ice creams that were created in the last two days
+  Icecream.where(["created_at > ?", 2.days.ago ])
+  b. Get the ice creams sorted by the names of their flavors
+  Icecream.order("flavor ASC")
+  c. From b, get the top 2 ice creams
+  Icecream.order("flavor ASC").limit(2)
+  d. From b, get the 2d and 3d ice creams
+  Icecream.order("flavor ASC").limit(2).offset(1)
+  e. Get the icecreams whose flavor starts with "P", then have them ordered by flavor, getting only one ice cream
+  Icecream.where("flavor LIK 'P%'").limit(1).order("flavor")
+  f. Get the first ice cream that has a "V" in its flavor
+  Icecream.where("flavaor LIKE '%V%'").first
+
+6. Locking
+  Create a migration to set up the ice cream app for locking
+  Create two references to Icecream.first, h and j
+  Save h
+  Save j
+  Change the flavor of h to "Baccy"
+  save h
+  save j
+  Anyone know the difference between optimistic and pessimistic locking? 

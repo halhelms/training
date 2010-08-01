@@ -1,0 +1,2 @@
+module Illustration2Helper
+end

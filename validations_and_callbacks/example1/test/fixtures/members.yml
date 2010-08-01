@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  date_of_birth: 2010-07-21
+  tac_agreed: false
+
+two:
+  name: MyString
+  email: MyString
+  date_of_birth: 2010-07-21
+  tac_agreed: false
